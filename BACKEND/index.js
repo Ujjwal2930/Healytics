@@ -4,6 +4,9 @@ dotenv.config();
 const cors = require("cors");
 const connectDB = require("./config/db");
 
+const cors = require("cors");
+app.use(cors({ origin: "https://your-frontend.vercel.app" }));
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -24,3 +27,5 @@ app.use("/api/upload", require("./routes/uploadRoutes"));
 
 // Server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
